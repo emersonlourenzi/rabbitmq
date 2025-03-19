@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s  # Intervalo de coleta das métricas
+
+scrape_configs:
+  - job_name: "spring-app"
+    static_configs:
+      - targets: ["host.docker.internal:8080"]  # API Spring Boot
+
+  - job_name: "rabbitmq"
+    static_configs:
+      - targets: ["host.docker.internal:15692"] # RabbitMQ
